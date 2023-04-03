@@ -1,5 +1,7 @@
 # build front-end
 FROM node:lts-alpine AS frontend
+# 替换源为阿里云源
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 RUN npm install pnpm -g
 
@@ -17,6 +19,8 @@ RUN pnpm run build
 
 # build backend
 FROM node:lts-alpine as backend
+# 替换源为阿里云源
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 RUN npm install pnpm -g
 
@@ -34,6 +38,8 @@ RUN pnpm build
 
 # service
 FROM node:lts-alpine
+# 替换源为阿里云源
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 RUN npm install pnpm -g
 
