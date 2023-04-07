@@ -324,11 +324,11 @@ A: 一种可能原因是经过 Nginx 反向代理，开启了 buffer，则 Nginx
 
 <div style="display: flex; gap: 20px;">
 	<div style="text-align: center">
-		<img style="max-width: 100%" src="./docs/wechat.png" alt="微信" />
+		<img style="max-width: 100%" src="./docs/wechat.jpg" alt="微信" />
 		<p>WeChat Pay</p>
 	</div>
 	<div style="text-align: center">
-		<img style="max-width: 100%" src="./docs/alipay.png" alt="支付宝" />
+		<img style="max-width: 100%" src="./docs/alipay.jpg" alt="支付宝" />
 		<p>Alipay</p>
 	</div>
 </div>
