@@ -3,7 +3,7 @@ version: '3'
 services:
   app:
     container_name: chatgpt-web
-    image: liujie329/chatgpt-web # 总是使用latest,更新时重新pull该tag镜像即可
+    image: liu2511981/chatgpt-web # 总是使用latest,更新时重新pull该tag镜像即可
     ports:
       - 3002:3002
     environment:
@@ -18,11 +18,11 @@ services:
       # 反向代理，可选 https://3.135.194.203:9999
       API_REVERSE_PROXY: 
       # 访问权限密钥，可选
-      AUTH_SECRET_KEY:
+      AUTH_SECRET_KEY: 1qaz2wsx
       # 每小时最大请求次数，可选，默认无限
       MAX_REQUEST_PER_HOUR: 0
       # 超时，单位毫秒，可选
-      TIMEOUT_MS: 60000
+      TIMEOUT_MS: 100000
       # Socks代理，可选，和 SOCKS_PROXY_PORT 一起时生效
       SOCKS_PROXY_HOST:
       # Socks代理端口，可选，和 SOCKS_PROXY_HOST 一起时生效
@@ -32,7 +32,7 @@ services:
       # Socks代理密码，可选，和 SOCKS_PROXY_HOST & SOCKS_PROXY_PORT 一起时生效
       SOCKS_PROXY_PASSWORD: 
       # HTTPS_PROXY 代理，可选 https://3.135.194.203:9999
-      HTTPS_PROXY: 
+      HTTPS_PROXY: https://liujie:1qaz2wsx@lj.yaolianjie.com:9998
   nginx:
     container_name: nginx
     image: nginx:alpine
