@@ -8,7 +8,7 @@ services:
       - 3002:3002
     environment:
       # 二选一
-      OPENAI_API_KEY: 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
+      OPENAI_API_KEY: xxx
       # 二选一
       OPENAI_ACCESS_TOKEN:
       # API接口地址，可选，设置 OPENAI_API_KEY 时可用
@@ -32,16 +32,20 @@ services:
       # Socks代理密码，可选，和 SOCKS_PROXY_HOST & SOCKS_PROXY_PORT 一起时生效
       SOCKS_PROXY_PASSWORD: 
       # HTTPS_PROXY 代理，可选 https://3.135.194.203:9999
-      HTTPS_PROXY: https://liujie:1qaz2wsx@lj.yaolianjie.com:9998
+      HTTPS_PROXY: xxx
   nginx:
     container_name: nginx
-    image: nginx:alpine
+    image: nginx:latest
     ports:
       - '80:80'
+      - '443:443'
     expose:
       - '80'
+      - '443'
     volumes:
       - ./nginx/html:/usr/share/nginx/html
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - /home/lj/workspace/chatgpt-web/cert:/etc/nginx/cert
     links:
       - app
+
